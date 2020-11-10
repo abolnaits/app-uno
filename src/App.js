@@ -10,15 +10,16 @@ function App() {
   return (
     <div>
       <h1 id="main">Componente Padre</h1>
-      <Uno/>
-      <Uno/>
+      <Uno myText="Uno"/>
+      <Uno myText="Dos"/>
     </div>
   );
 }
 //Componente <Uno/>
-function Uno(){
+function Uno(props){
+  console.log('Props ==> ',props);
   return(
-    <div>Componente Uno</div>
+  <div>Componente {props.myText}</div>
   );
 }
 //Exporto el componente
