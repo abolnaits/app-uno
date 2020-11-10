@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
 
+/*
+Parece HTML pero no lo es, esto es JSX
+JS con etiquetas especiales, Babel Repel es usado para esto
+*/
+//Componente <App/>
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 id="main">Componente Padre</h1>
+      <Uno/>
+      <Uno/>
     </div>
   );
 }
-
+//Componente <Uno/>
+function Uno(){
+  return(
+    <div>Componente Uno</div>
+  );
+}
+//Exporto el componente
 export default App;
