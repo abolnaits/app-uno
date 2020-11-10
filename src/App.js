@@ -65,9 +65,18 @@ class Uno extends React.Component{
 */
 console.log(tareas);
 class App extends React.Component{
+  //Estados
+  state = {
+    tareas : tareas
+  }
   render(){
     return(
-      <h1>Hola!</h1>
+      <div>
+        <h1>Lista de tareas</h1>
+        {
+        this.state.tareas.map((e) => <h1 key={e.id}>{e.titulo}</h1>)
+        }
+      </div>
     )
   }  
 }
