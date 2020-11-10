@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import tareas from './data/tareas.json';
 /*
 Parece HTML pero no lo es, esto es JSX
 JS con etiquetas especiales, Babel Repel es usado para esto
 */
 //Componente <App/>
+/*
 function App() {
   return (
     <div>
@@ -15,6 +17,7 @@ function App() {
     </div>
   );
 }
+*/
 //Componente <Uno/>
 /*
 function Uno(props){
@@ -24,6 +27,7 @@ function Uno(props){
   );
 }
 */
+/*
 class Uno extends React.Component{
   //Objeto de estados
   state = {
@@ -57,6 +61,15 @@ class Uno extends React.Component{
       )
     }
   }
+}
+*/
+console.log(tareas);
+class App extends React.Component{
+  render(){
+    return(
+      <h1>Hola!</h1>
+    )
+  }  
 }
 //Exporto el componente
 export default App;
