@@ -73,13 +73,30 @@ class App extends React.Component{
   state = {
     tareas : tareas
   }
+
+  agregar = (titulo,desc) =>{
+    console.log('Agregando tarea');
+    console.log(titulo,desc);
+    const nueva = {
+      titulo:titulo,
+      desc:desc,
+      id:this.state.tareas.length + 1,
+      done:false
+    }
+    //Agrego la tarea al arreglo
+    this.setState({
+      tareas:[...this.state.tareas,nueva]
+    })
+    console.log(nueva);
+
+  }
   render(){
     var that = this;
     return(
       
       <div id="main">
         <div id="forma">
-        <FormaTarea/>  
+        <FormaTarea addTarea={this.agregar}/>  
         </div>
         <div id="listado">
         <h1>Lista de tareas</h1>

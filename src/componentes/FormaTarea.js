@@ -12,6 +12,13 @@ class FormaTarea extends React.Component{
         console.log('Enviando...');
         //Obtengo los datos del Form
         console.log(this.state);
+        //Llamo al metodo creado en App.js
+        this.props.addTarea(this.state.titulo,this.state.desc);
+        //Limpio los datos
+        this.setState({
+            titulo:'',
+            desc:''
+        });
     }
 
    
@@ -34,6 +41,8 @@ class FormaTarea extends React.Component{
     }
     
     render(){
+        console.log(this.props);
+        //this.props.addTarea();
         return(
             <div>
                 <h1>Agregar un tarea a la lista</h1>
