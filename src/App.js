@@ -74,6 +74,10 @@ class App extends React.Component{
     tareas : tareas
   }
 
+  /*
+  Agrego una nueva tarea, esta funcion se pasa en una 
+  props al componente FormaTarea
+  */
   agregar = (titulo,desc) =>{
     console.log('Agregando tarea');
     console.log(titulo,desc);
@@ -90,6 +94,21 @@ class App extends React.Component{
     console.log(nueva);
 
   }
+
+  /*
+  Usamos filter para actualizar el estado
+  */
+  eliminar = (id) => {
+    console.log('Eliminar ==>',id);
+    this.state.tareas.filter((task)=>{
+      return task.id !== id;
+    });
+  }
+
+  actualizar = () => {
+
+  }
+
   render(){
     var that = this;
     return(
