@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import tareas from './data/tareas.json';
+//Componente Tarea
+import Tareas from './componentes/Tareas';
 /*
 Parece HTML pero no lo es, esto es JSX
 JS con etiquetas especiales, Babel Repel es usado para esto
@@ -65,17 +67,17 @@ class Uno extends React.Component{
 */
 console.log(tareas);
 class App extends React.Component{
-  //Estados
+  //Estados, que contienen las tareas importadas
   state = {
     tareas : tareas
   }
   render(){
+    var that = this;
     return(
       <div>
         <h1>Lista de tareas</h1>
-        {
-        this.state.tareas.map((e) => <h1 key={e.id}>{e.titulo}</h1>)
-        }
+        {/*Paso el arreglo para que sea usado desde props*/}
+        <Tareas tareas={this.state.tareas}/>
       </div>
     )
   }  

@@ -2,19 +2,19 @@
     {
     "id":1,
     "titulo":"Comprar en el super",
-    "Descripcion":"Ir al super mercado y comprar",
+    "desc":"Ir al super mercado y comprar",
     "done":false
 },
 {
     "id":2,
     "titulo":"Cocinar la comida",
-    "Descripcion":"Volver a la casa y preparar la comida",
+    "desc":"Volver a la casa y preparar la comida",
     "done":false
 },
 {
     "id":3,
     "titulo":"Invitar a los amigos",
-    "Descripcion":"LLamar a los amigos y pedir que vengas",
+    "desc":"LLamar a los amigos y pedir que vengas",
     "done":false
 }
 ]
