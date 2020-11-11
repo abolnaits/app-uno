@@ -4,6 +4,8 @@ import React from 'react';
 import tareas from './data/tareas.json';
 //Componente Tarea
 import Tareas from './componentes/Tareas';
+//FormaTarea
+import FormaTarea from './componentes/FormaTarea';
 /*
 Parece HTML pero no lo es, esto es JSX
 JS con etiquetas especiales, Babel Repel es usado para esto
@@ -74,10 +76,16 @@ class App extends React.Component{
   render(){
     var that = this;
     return(
-      <div>
+      
+      <div id="main">
+        <div id="forma">
+        <FormaTarea/>  
+        </div>
+        <div id="listado">
         <h1>Lista de tareas</h1>
         {/*Paso el arreglo para que sea usado desde props*/}
         <Tareas tareas={this.state.tareas}/>
+        </div>
       </div>
     )
   }  
