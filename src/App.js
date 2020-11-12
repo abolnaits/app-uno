@@ -100,16 +100,40 @@ class App extends React.Component{
   */
   eliminar = (id) => {
     console.log('Eliminar ==>',id);
-    this.state.tareas.filter((task)=>{
+    const actualizado =this.state.tareas.filter((task)=>{
       return task.id !== id;
+    });
+    this.setState({
+      tareas:actualizado
+    });
+  }
+  /*
+  actualizar = function(id){
+    console.log('This ==> ',this);
+    const nuevo = this.state.tareas.map(function(i){
+      console.log(i);
+      if(id == i.id){
+        i.done = !i.done;
+      }
+      return i;
+    });
+  }
+*/
+  actualizar = (id)=>{
+    console.log('Actualizar',id);
+    const nuevos = this.state.tareas.map((item)=>{
+      if(id == item.id){
+        item.done = !item.done;
+      }
+      return item;
+    });
+    this.setState({
+      tareas:nuevos
     });
   }
 
-  actualizar = () => {
-
-  }
-
   render(){
+    //this.actualizar();
     var that = this;
     return(
       
@@ -120,7 +144,11 @@ class App extends React.Component{
         <div id="listado">
         <h1>Lista de tareas</h1>
         {/*Paso el arreglo para que sea usado desde props*/}
-        <Tareas tareas={this.state.tareas}/>
+        <Tareas 
+        tareas={this.state.tareas} 
+        deleteTarea={this.eliminar}
+        updateTarea={this.actualizar}
+        />
         </div>
       </div>
     )
