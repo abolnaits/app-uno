@@ -14,8 +14,8 @@ class Tarea extends React.Component{
                 <h1>{this.props.item.id}</h1>
                 <p>{this.props.item.titulo}</p>
                 <p>{this.props.item.desc}</p>
-                <input type="checkbox"/>
-                <button>x</button>
+                <input type="checkbox" onChange={this.props.updateTarea.bind(this,this.props.item.id)}/>
+                <button onClick={this.props.deleteTarea.bind(this,this.props.item.id)}>x</button>
             </div>
     }
 }

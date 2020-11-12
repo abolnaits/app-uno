@@ -10,7 +10,12 @@ class Tareas extends React.Component{
     render(){
         console.log(this.props);
         return this.props.tareas.map((e)=>{
-            return <Tarea item={e} key={e.id}/>
+            return <Tarea 
+            item={e} 
+            key={e.id} 
+            deleteTarea={this.props.deleteTarea}
+            updateTarea={this.props.updateTarea}
+            />
         })
     }
 }
