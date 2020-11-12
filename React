@@ -1,0 +1,82 @@
+#React
+-Es una libreria para la creacion de interfaces web
+-Uso de virtual DOM
+-Render en cliente / servidor 
+-Componentes (etiquetas HTML personalizadas con cierta funcionalidad)
+
+#Componentes
+-Dividir una app en pequeñas partes
+-Toda app es un conjunto de componentes o pequeñas partes
+
+#Crear Proyecto
+npx create-react-app my-app
+
+#Iniciar proyecto
+npm start
+
+#Index.js
+Archivo que inicia la app en React
+
+#ReactDOM
+ReactDom.render(<Componente/>,ID);
+
+#React.StrictMode
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+#Props de un Componente
+<Componente myProp='1'/>
+myProp = propiedad
+
+function Componente(props){
+	console.log(props.myProp)
+	return{
+		<div>Componente {props.myProp}</div>
+	}
+}
+El parametro props es usado para pasarle valors al componente
+
+#Estado de componente
+Un componente tiene un estado asociado,
+para manipular el estado se usa this.setState()
+o this.state.mostrar = true
+
+Class Uno extends React.Component{
+	state ={
+	mostrar:false
+	}
+
+	mostrar=()=>{
+	this.setState({mostrar:true})
+	}
+}
+#State
+this.setState({mostrar:true})
+
+#Styles
+Se puede asignar estilos mediante:
+1.Estilos inline
+style={{obj}}
+2.Clases desde archivos Css
+className='clase'
+
+#PropTypes
+-Especificar el tipo de datos de una props
+-Forma de generar advertencias en el codigo,
+se define un tipo de datos esperador para una props
+
+import PropTypes from 'prop-types';
+
+Tarea.propTypes = {
+	item : PropTypes.object.isrequired
+}
+
+
+#Formularios
+
+#Pasar funciones atraves de props
+Para pasar datos entre componentes se usan funciones
