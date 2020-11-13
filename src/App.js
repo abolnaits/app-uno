@@ -6,6 +6,8 @@ import tareas from './data/tareas.json';
 import Tareas from './componentes/Tareas';
 //FormaTarea
 import FormaTarea from './componentes/FormaTarea';
+//Posts 
+import Posts from './componentes/Posts'
 /*
 Parece HTML pero no lo es, esto es JSX
 JS con etiquetas especiales, Babel Repel es usado para esto
@@ -149,6 +151,7 @@ class App extends React.Component{
         deleteTarea={this.eliminar}
         updateTarea={this.actualizar}
         />
+        <Posts/>
         </div>
       </div>
     )

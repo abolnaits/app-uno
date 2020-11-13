@@ -80,3 +80,8 @@ Tarea.propTypes = {
 
 #Pasar funciones atraves de props
 Para pasar datos entre componentes se usan funciones
+
+@Estados de aplicacione React
+-Life cycle methods
+-Ejecutar metodos dependiendo de como va cargando la app
+-render es el ultimo paso ?
