@@ -8,6 +8,8 @@ import Tareas from './componentes/Tareas';
 import FormaTarea from './componentes/FormaTarea';
 //Posts 
 import Posts from './componentes/Posts'
+//Enroutador BrowserRouter, Route
+import {BrowserRouter as BR, Route } from 'react-router-dom';
 /*
 Parece HTML pero no lo es, esto es JSX
 JS con etiquetas especiales, Babel Repel es usado para esto
@@ -140,19 +142,33 @@ class App extends React.Component{
     return(
       
       <div id="main">
-        <div id="forma">
-        <FormaTarea addTarea={this.agregar}/>  
-        </div>
-        <div id="listado">
-        <h1>Lista de tareas</h1>
-        {/*Paso el arreglo para que sea usado desde props*/}
-        <Tareas 
-        tareas={this.state.tareas} 
-        deleteTarea={this.eliminar}
-        updateTarea={this.actualizar}
-        />
-        <Posts/>
-        </div>
+        <BR>
+        <Route exact path="/" render={()=>{
+          return(
+          <div>
+          <div id="forma">
+          <FormaTarea addTarea={this.agregar}/>  
+          </div>
+          <div id="listado">
+          <h1>Lista de tareas</h1>
+          {/*Paso el arreglo para que sea usado desde props*/}
+          <Tareas 
+          tareas={this.state.tareas} 
+          deleteTarea={this.eliminar}
+          updateTarea={this.actualizar}
+          />
+          </div>
+          </div>
+          )
+        }  
+        }>
+
+        </Route>
+        <Route exact path='/post' component={Posts}></Route>
+        </BR>
+        
+       
+        
       </div>
     )
   }  
