@@ -9,7 +9,7 @@ import FormaTarea from './componentes/FormaTarea';
 //Posts 
 import Posts from './componentes/Posts'
 //Enroutador BrowserRouter, Route
-import {BrowserRouter as BR, Route } from 'react-router-dom';
+import {BrowserRouter as BR, Route, Link } from 'react-router-dom';
 /*
 Parece HTML pero no lo es, esto es JSX
 JS con etiquetas especiales, Babel Repel es usado para esto
@@ -143,6 +143,9 @@ class App extends React.Component{
       
       <div id="main">
         <BR>
+        <Link to='/'>Home</Link> <br/>
+        <Link to='/posts'>Posts</Link>
+        
         <Route exact path="/" render={()=>{
           return(
           <div>
@@ -164,7 +167,7 @@ class App extends React.Component{
         }>
 
         </Route>
-        <Route exact path='/post' component={Posts}></Route>
+        <Route path='/posts' component={Posts}></Route>
         </BR>
         
        
